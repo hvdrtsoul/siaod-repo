@@ -32,8 +32,8 @@ public:
         else // there's no situation where first_dot == second_dot
         {
             type = 2;
-            k = (first_dot[1] - second_dot[1])/(first_dot[0] - second_dot[0]);
-            b = second_dot[1] - second_dot[0]*k;
+            k = (double)(first_dot[1] - second_dot[1])/(first_dot[0] - second_dot[0]);
+            b = (double)second_dot[1] - second_dot[0]*k;
 
             this->first_dot = first_dot;
             this->second_dot = second_dot;
@@ -112,7 +112,9 @@ int main()
 
             if(temp_line.is_medium(dots))
             {
-                cout << "MEDIAN FOUND: " << temp_line;
+                cout << "MEDIAN FOUND: " << temp_line << endl;
+                // cout << "DOTS ARE: " << dots[i][0] << ':' << dots[i][1] << ' ' << dots[j][0] << ':' << dots[j][1];
+                
                 return 0;
             }
         }
