@@ -62,6 +62,5 @@ int main()
     
     cout << "THE COOLEST WORD IS: " << coolest_word;
 
-
     return 0;
 }
