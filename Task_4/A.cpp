@@ -18,7 +18,7 @@ const int MAX_LEN = 1000;
 int main()
 {
 
-    Question first(0, 2, 1, "anal?", *new vector<string>);
+    Question first(0, 2, 1, "ananas?", *new vector<string>);
 
     Question questions[MAX_LEN];
 
