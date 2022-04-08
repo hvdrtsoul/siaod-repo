@@ -4,6 +4,9 @@
 #include "Question.h"
 #include <cstdlib>
 #include <ctime>
+#include <vector>
+
+using namespace std;
 
 const int MAX_QUESTIONS_COUNT = 1000;
 
@@ -12,7 +15,7 @@ struct Theme{
     public:
         int number;
         int got_questions = 0;
-        Question questions[MAX_QUESTIONS_COUNT];
+        vector<Question> questions;
 
     std::pair<Question, Question> get_two_random_questions()
     {
@@ -26,11 +29,10 @@ struct Theme{
         return std::make_pair(questions[first_number], questions[second_number]);
     }
 
-    bool add_question(Question &input)
+    void add_question(Question &input)
     {
-        questions[got_questions] = input;
-        
-        ++got_questions;
+        questions.push_back(input);
+        return;
     }
 };
 
