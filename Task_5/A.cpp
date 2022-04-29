@@ -70,21 +70,20 @@ struct List{
     }
 };
 
-void insert_key_to_array(int key, vector<List> &array){
-    array[key%array.size()].push_back(key);
+void insert_key_to_array(int key, vector<List*> &array){
+    array[key%array.size()]->push_back(key);
     return;
 }
 
 int main()
 {
-    vector<List> lists;
+    vector<List*> lists;
 
     for(int i = 0;i < 10;++i) // creating 10 lists
-        lists.push_back(*new List());
+        lists.push_back(new List());
 
 
     for(int i = 1;i < 810;i += ((int)pow(i, 3))%3){
-        cout << i << endl;
         cout << "INSERTING " << i << endl;
         insert_key_to_array(i, lists);
     }
@@ -93,13 +92,13 @@ int main()
     // delete 505 key from each list:
 
     for(int i = 0;i < lists.size();++i){
-        lists[i].remove_all_nodes_with_key(505);
+        lists[i]->remove_all_nodes_with_key(505);
     }
 
     // find all nodes adresses with key 404:
 
     for(int i = 0;i < lists.size();++i){
-        cout << "ADRESS FOUND: " << lists[i].find_node_by_key(404) << endl;
+        cout << "ADRESS FOUND: " << lists[i]->find_node_by_key(404) << endl;
     }
 
     return 0;
