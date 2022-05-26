@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "cmath": "cpp",
+        "exception": "cpp",
+        "memory": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp",
+        "initializer_list": "cpp",
+        "type_traits": "cpp",
+        "xutility": "cpp"
+    }
+}
