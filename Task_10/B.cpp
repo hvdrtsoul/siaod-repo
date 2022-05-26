@@ -35,17 +35,29 @@ vector<int> countAppears(string text, string candidate, char delimiter){
 }
 
 int main(){
-    cout << "Please, input error log:" << endl;
-    string errorLog;
-    getline(cin,errorLog);
+    setlocale(LC_ALL, "Russian");
+    cout << "Please input text with groups:" << endl;
+    string text;
+    getline(cin, text);
 
-    cout << "Please, input cash register number" << endl;
-    string cashNumber;
-    cin >> cashNumber;
+    vector<int> appearances1 = countAppears(text, "ИКБО", '|');
+    vector<int> appearances2 = countAppears(text, "ИНБО", '|');
+    vector<int> appearances3 = countAppears(text, "ИВБО", '|');
 
-    vector<int> appearances = countAppears(errorLog, cashNumber, '!');
-    
-    cout << "This cash register did " << appearances.size() << " operations";
+    for(int appearancePos : appearances1)
+        cout << appearancePos << endl;
+
+    for(int appearancePos : appearances1)
+        text[appearancePos+1] = 'И';
+
+    for(int appearancePos : appearances2)
+        text[appearancePos+1] = 'И';
+
+    for(int appearancePos : appearances3)
+        text[appearancePos+1] = 'И';
+
+    cout << "So, after renaming the text is:" << endl;
+    cout << text;
 
     return 0;
 }
